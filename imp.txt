@@ -1,0 +1,25 @@
+Important Instruction Before Run Version 0.1
+Installation
+● Pip install flask
+● Pip install mysql-connector
+Database (Mysql)
+Query 1 :
+Create database grievancesys;
+Query 2 :
+CREATE TABLE grievancesys (GrievanceId VARCHAR(10),
+ Grievance VARCHAR(1000),
+ Date VARCHAR(100),
+ Role VARCHAR(100),
+ Dept VARCHAR(200)
+);
+Query 3 :
+INSERT INTO grievancesys (Grievance, Date, Role, Dept)
+VALUES ('Library books not updated', '2025-02-17', 'Staff', 'IT Department');
+INSERT INTO grievancesys (Grievance, Date, Role, Dept)
+VALUES ('Faculty shortage in department', '2025-02-17', 'Staff', 'Mechanical
+Department');
+INSERT INTO grievancesys (Grievance, Date, Role, Dept)
+VALUES ('Water leakage in the lab', '2025-02-17', 'Student', 'Chemical Department');
+Note :
+● change password
+● Run index.py directly
