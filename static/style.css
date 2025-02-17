@@ -1,0 +1,197 @@
+*
+{
+    top:0;
+    left:0;
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+    background-color: black;
+}
+body{
+    background-color: black;
+}
+.AdminPanel
+{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+    position: absolute;
+}
+.FirstBox
+{
+    width: 98%;
+    /* border: 1px solid rgb(73, 73, 73); */
+    height: 60px;
+    margin-left: 16px;
+    transform: translateY(10px);
+    border-radius: 20px;
+}
+.PanelName
+{
+    color:white;
+    font-family: poppnic,sans-serif;
+    transform: translateY(14px);
+    margin-left: 20px;
+}
+.Notification
+{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+.notificationBox
+{
+    width: 400px;
+    border: 1px solid rgb(73, 73, 73);
+    height: 150px;
+    transform: translateY(10px);
+    border-radius: 15px;
+}
+.Notification_Digit
+{
+    font-family: poppnic,sans-serif;
+    color:#fff;
+    transform: translateY(50px);
+    margin-left: 23px;
+}
+.Notification_Text
+{
+    font-family: poppnic,sans-serif;
+    color:#fff;
+    transform: translateY(40px);
+    margin-left: 23px;
+}
+.dropdown
+{
+    width: 98%;
+    height: 60px;
+    margin-left: 16px;
+    transform: translateY(10px);
+    border-radius: 20px;
+}
+.optionstyle
+{
+    width: 250px;
+    color:#fff;
+    font-family: poppnic,sans-serif;
+    text-align: center;
+    height: 50px;
+    margin-left: 16px;
+    border-radius: 12px;
+    font-size: 18px;
+
+}
+.select
+{
+    margin-left: 20px;
+    color:#000;
+    background-color: #fff;
+    height: 50px;
+    width: 150px;
+    font-size: 18px;
+    border: 1px solid rgb(73, 73, 73);
+    border-radius: 12px;
+}
+
+.tableContainer
+{
+    width: 97%;
+    border: 1px solid rgb(73, 73, 73);
+    margin-left: 25px;
+    transform: translateY(10px);
+    background-color: black;
+    border-radius: 10px;
+    overflow: hidden;
+    max-height: 320px;
+    overflow-y: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #333;
+    color: #fff;
+    overflow: hidden;
+    font-family: poppnic,sans-serif;
+}
+th, td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #444;
+}
+.rowData1
+{
+    width:150px;
+}
+.rowData2
+{
+    width:700px;
+}
+.rowData3
+{
+    width:200px;
+}
+.rowData4
+{
+width:200px;
+}
+.buttoncontainer
+{
+    width: 98%;
+    height: 60px;
+    margin-left: 16px;
+    transform: translateY(30px);
+    border-radius: 20px;
+}
+.ListButton
+{
+    display: flex;
+    list-style: none;
+    margin-left: 980px;
+}
+.btnAction
+{
+    margin-left: 20px;
+    color:#000;
+    background-color: #fff;
+    height: 50px;
+    width: 150px;
+    font-size: 18px;
+    border: 1px solid rgb(73, 73, 73);
+    border-radius: 12px;
+    justify-content: right;
+}
+
+.floatwin
+{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.StatisticsWindow
+{
+    height: 475px;
+    width: 920px;
+   background-color: rgb(87, 85, 85); 
+    transform: translateY(-580px);
+    z-index: 10;
+    position: relative;
+    border-radius: 20px;
+    border:none;
+    overflow: hidden;
+    border: 3px solid rgb(67, 67, 67);
+    display: none;
+}
+.rejectBtn
+{
+    padding:10px;
+    width:100px;
+    background-color:black;
+    color:#fff;
+    border:1px solid #fff;
+    border-radius:10px;
+    font-family:poppnic,sans-serif;
+}

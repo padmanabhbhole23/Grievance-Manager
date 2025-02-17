@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dash Board</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+
+</head>
+
+<body>
+    <section class="AdminPanel">
+        <div class="FirstBox">
+            <h1 class="PanelName">Dashboard</h1>
+        </div>
+
+        <ul class="Notification">
+            <li>
+                <div class="notificationBox">
+                    <h1 class="Notification_Text">Total Gravence <svg xmlns="http://www.w3.org/2000/svg" width="22"
+                            height="22" fill="currentColor" class="bi bi-wallet" viewBox="0 0 16 16"
+                            style="margin-left:140px">
+                            <path
+                                d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a2 2 0 0 1-1-.268M1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1" />
+                        </svg></h1>
+                    <h1 class=" Notification_Digit">{{length}}</h1>
+                </div>
+            </li>
+            <li>
+                <div class="notificationBox">
+                    <h1 class="Notification_Text">Student Gravence <svg xmlns="http://www.w3.org/2000/svg" width="22"
+                            height="22" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"
+                            style="margin-left:110px">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                        </svg></h1>
+                    <h1 class=" Notification_Digit">{{totalStud}}</h1>
+                </div>
+            </li>
+            <li>
+                <div class="notificationBox">
+                    <h1 class="Notification_Text">Staff Gravence <svg xmlns="http://www.w3.org/2000/svg" width="22"
+                            height="22" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"
+                            style="margin-left:140px">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                        </svg></h1>
+                    <h1 class=" Notification_Digit">{{totalStaff}}</h1>
+                </div>
+            </li>
+            <li>
+                <div class="notificationBox">
+                    <h1 class="Notification_Text">Date <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                            fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16" style="margin-left:250px">
+                            <path
+                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                        </svg></h1>
+                    <h1 class=" Notification_Digit">{{date}}</h1>
+                </div>
+            </li>
+        </ul>
+        <br><br>
+
+        <div class="dropdown">
+            <form method="post" action="/selectData">
+                <select class="optionstyle" name="dept" id="Selectdept">
+                    <option value="MCA Department">MCA Department</option>
+                    <option value="CS Department">CS Department</option>
+                    <option value="IT Department">IT Department</option>
+                    <option value="Engineering Department">Engineering Department</option>
+                    <option value="Mechanical Department">Mechanical Department</option>
+                    <option value="Chemical Department">Chemical Department</option>
+                </select>
+                <select class="optionstyle" name="role" id="Selectrole">
+                    <option value="Student">Student</option>
+                    <option value="Staff">Staff</option>
+                </select>
+                <button type="submit" class="select" id="select">Submit</button>
+            </form>
+        </div>
+        <br>
+        <div class="tableContainer">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="rowData1">Gravence Id</th>
+                        <th class="rowData2">Gravence</th>
+                        <th class="rowData3">Date</th>
+                        <th class="rowData4">Reject Grivence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in info%}
+                    <tr>
+                        <form action="/reject" method="post">
+                        <td class="rowData1">{{item[0]}} <input type="hidden" value="{{item[0]}}" name="gid"></td>
+                        <td class="rowData2">{{item[1]}}</td>
+                        <td class="rowData3">{{item[2]}}</td>
+                        <td class="rowData4"><button class="rejectBtn" type="submit">Reject</button></td>
+                        </form>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div class="buttoncontainer">
+            <ul class="ListButton">
+                <li>
+                    <form>
+                        <button class="btnAction">Save To Excel</button>
+                    </form>
+                </li>
+                <li>
+                    <form>
+                        <button class="btnAction">AI Analysis</button>
+                    </form>
+                </li>
+                <li>
+                    <form>
+                        <button class="btnAction" id="floatWindow">Statistics </button>
+                    </form>
+                </li>
+                <li>
+                    <form>
+                        <button class="btnAction">Save Permeate</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+
+        <!-- float window -->
+        <ul class="floatwin">
+            <li>
+                <div class="StatisticsWindow" id="StatisticsWindow">
+                    <img src="/static/chart.png" class="chartimg">
+                </div>
+            </li>
+        </ul>
+
+    </section>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
