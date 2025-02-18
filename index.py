@@ -9,7 +9,9 @@ cursorPy=connection.cursor()
 app=Flask(__name__)
 @app.route("/")
 def hello():
-    return render_template('index.html',info=[],length=0,totalStud=0,totalStaff=0,date=current_date)
+    dept="MCA Department"
+    role="Student"
+    return render_template('index.html',info=[],length=0,totalStud=0,totalStaff=0,date=current_date,selectd_dept=dept,selected_role=role)
 
 @app.route("/selectData",methods=["POST"])
 def selectDataFromDB():
@@ -21,8 +23,7 @@ def selectDataFromDB():
         data=cursorPy.fetchall()
         print(data)
 
-        # Set Data in notification panel
-        totalGrev=len(data)
+
 
         # set data student total grivence
         C1role="Student"
@@ -36,14 +37,17 @@ def selectDataFromDB():
         data3 = cursorPy.fetchall()
         totalStaffGrev=len(data3)
 
+        # Set Data in notification panel
+        totalGrev =totalStudGrv+totalStaffGrev
+
         if not data:
-            resp=make_response(render_template('index.html',info=[],length=0,totalStud=0,totalStaff=0,date=current_date))
+            resp=make_response(render_template('index.html',info=[],length=totalGrev,totalStud=totalStudGrv,totalStaff=totalStaffGrev,date=current_date,selectd_dept=dept,selected_role=role))
             resp.set_cookie("dept", dept if dept else "")
             resp.set_cookie("role", role if role else "")
 
             return resp
         else:
-            resp = make_response(render_template('index.html', info=data, length=totalStudGrv, totalStud=totalStudGrv, totalStaff=totalStaffGrev, date=current_date))
+            resp = make_response(render_template('index.html', info=data, length=totalGrev, totalStud=totalStudGrv, totalStaff=totalStaffGrev, date=current_date,selectd_dept=dept,selected_role=role))
             resp.set_cookie("dept", dept if dept else "")
             resp.set_cookie("role", role if role else "")
             return resp
@@ -79,10 +83,12 @@ def deleteGrev():
         data3 = cursorPy.fetchall()
         totalStaffGrev = len(data3)
 
+        totalGrev=totalStudGrv+totalStaffGrev
+
         if not data:
-            return render_template('index.html', info=[], length=0, totalStud=0, totalStaff=0, date=current_date)
+            return render_template('index.html', info=[], length=totalGrev, totalStud=totalStudGrv, totalStaff=totalStaffGrev, date=current_date,selectd_dept=dept,selected_role=role)
         else:
-            return render_template('index.html', info=data, length=totalStudGrv, totalStud=totalStudGrv, totalStaff=totalStaffGrev, date=current_date)
+            return render_template('index.html', info=data, length=totalGrev, totalStud=totalStudGrv, totalStaff=totalStaffGrev, date=current_date,selectd_dept=dept,selected_role=role)
     else:
         print("This is not important")
 

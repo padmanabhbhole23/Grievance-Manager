@@ -1,4 +1,4 @@
-Important Instruction Before Run Version 0.1
+Important Instruction Before Run Version 0.2
 Installation
 ● Pip install flask
 ● Pip install mysql-connector

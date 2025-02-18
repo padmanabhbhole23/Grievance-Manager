@@ -64,16 +64,16 @@
         <div class="dropdown">
             <form method="post" action="/selectData">
                 <select class="optionstyle" name="dept" id="Selectdept">
-                    <option value="MCA Department">MCA Department</option>
-                    <option value="CS Department">CS Department</option>
-                    <option value="IT Department">IT Department</option>
-                    <option value="Engineering Department">Engineering Department</option>
-                    <option value="Mechanical Department">Mechanical Department</option>
-                    <option value="Chemical Department">Chemical Department</option>
+                    <option value="MCA Department" {% if selectd_dept=="MCA Department" %}selected{% endif %}>MCA Department</option>
+                    <option value="CS Department" {% if selectd_dept=="CS Department" %}selected{% endif %}>CS Department</option>
+                    <option value="IT Department"  {% if selectd_dept=="IT Department" %}selected{% endif %}>IT Department</option>
+                    <option value="Engineering Department" {% if selectd_dept=="Engineering Department" %}selected{% endif %}>Engineering Department</option>
+                    <option value="Mechanical Department" {% if selectd_dept=="Mechanical Department" %}selected{% endif %}>Mechanical Department</option>
+                    <option value="Chemical Department" {% if selectd_dept=="Chemical Department" %}selected{% endif %}>Chemical Department</option>
                 </select>
                 <select class="optionstyle" name="role" id="Selectrole">
-                    <option value="Student">Student</option>
-                    <option value="Staff">Staff</option>
+                    <option value="Student" {%if selected_role=="Student" %}selected{% endif %}>Student</option>
+                    <option value="Staff" {% if selected_role=="Staff" %}selected{% endif %}>Staff</option>
                 </select>
                 <button type="submit" class="select" id="select">Submit</button>
             </form>
