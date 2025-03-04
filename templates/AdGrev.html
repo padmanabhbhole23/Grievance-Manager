@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Grievance</title>
+    <link rel="stylesheet" href="/static/stylesheet.css">
+</head>
+<body>
+    <section class="Grievance">
+        <div class="Content" id="addGrievance">
+            <h2>Add New Grievance</h2>
+            <form method="post" action="/AdGrev">
+                <form action="/AdGrev" method="post">
+               <label>Reporter: <span id="username">{{ session['username'] }}</span></label>
+                <textarea name="grievance" placeholder="Describe your issue..." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    </section>
+
+    <script src="/static/userscript.js"></script>
+</body>
+</html>

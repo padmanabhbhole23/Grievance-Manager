@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Grievance</title>
+    <link rel="stylesheet" href="/static/stylesheet.css">
+</head>
+
+<body>
+    <section class="track-container">
+        <h1 class="page-title">Track Your Grievance</h1>
+
+        <div class="status-section">
+    <h2>Status: <span id="status-text">{{ grievance_status }}</span></h2>
+    <div class="progress-bar">
+        <div id="progress-bar" class="progress" style="width: {{ progress }}%;"></div>
+    </div>
+</div>
+
+<div class="grievance-info">
+    <p><strong>Grievance ID:</strong> {{ grievance_id if grievance_id else "No Grievance Found" }}</p>
+    <p><strong>Reported Date/Time:</strong> {{ reported_datetime }}</p>
+</div>
+
+
+        <form action="/reissue" method="post">
+            <input type="hidden" name="grievance_id" value="{{grievance_id}}">
+            <button type="submit" class="reissue-btn">Re-Issue</button>
+        </form>
+    </section>
+
+   <script src="/static/userscript.js"></script>
+
+</body>
+
+</html>

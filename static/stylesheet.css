@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+    background-color: #000; /* Black background */
+    color: #fff !important; /* Ensures all text is white */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Links */
+a {
+    color: #4da6ff !important; /* Light blue for visibility */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Form Elements */
+input, textarea, button {
+    color: #fff !important; /* Ensures form elements have white text */
+    background-color: #222; /* Dark gray background */
+    border: 1px solid #fff; /* White border */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #bbb; /* Light gray placeholder text */
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+/* Dashboard Page */
+.dashboard-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.dashboard-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.dashboard-buttons button {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.dashboard-buttons button:hover {
+    background-color: #333;
+}
+
+/* Add Grievance Page */
+.grievance-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grievance-container textarea {
+    width: 80%;
+    height: 100px;
+}
+
+.grievance-container button {
+    margin-top: 10px;
+}
+
+/* Track Page */
+.track-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 400px;
+    margin: 10px auto;
+    position: relative;
+}
+
+.step {
+    width: 20px;
+    height: 20px;
+    background-color: #555; /* Default step color */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.step.active {
+    background-color: #4da6ff; /* Highlight active steps */
+}
+
+/* Grievance Info */
+.grievance-info {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 80%;
+    text-align: center;
+}
+
+/* Reissue Button */
+.reissue-btn {
+    background-color: red;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.reissue-btn:hover {
+    background-color: darkred;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .dashboard-buttons {
+        flex-direction: column;
+    }
+}
